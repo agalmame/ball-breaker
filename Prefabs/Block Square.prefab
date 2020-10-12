@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 656949f67ed75b545b10e5c80f566541, type: 3}
+  BlockExplosion: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
