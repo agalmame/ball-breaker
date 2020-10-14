@@ -11,11 +11,16 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] ballSounds;
 
     AudioSource ballAudioSource;
+
+    Vector2 tweakVelocity = new Vector2(0.1f, 0.2f);
+
+    Rigidbody2D rigidBody;
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle.transform.position;
         ballAudioSource = GetComponent<AudioSource>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -49,6 +54,9 @@ public class Ball : MonoBehaviour
         {
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length - 1)];
             ballAudioSource.PlayOneShot(clip);
+            rigidBody.velocity += tweakVelocity;
+
+            
         }
     }
 }
